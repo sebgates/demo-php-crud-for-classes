@@ -43,22 +43,9 @@ $statement3->closeCursor();
 include('includes/header.php');
 ?>
 <h1>Record List</h1>
-
-<aside>
-<!-- display a list of categories -->
-<h2>Categories</h2>
-<nav>
-<ul>
-<?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
-<?php echo $category['categoryName']; ?>
-</a>
-</li>
-<?php endforeach; ?>
-</ul>
-</nav>          
-</aside>
-
+<?php
+include('includes/sidebar.php');
+?>
 <section>
 <!-- display a table of records -->
 <h2><?php echo $category_name; ?></h2>
