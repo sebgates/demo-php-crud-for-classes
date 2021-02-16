@@ -62,6 +62,8 @@ include('includes/header.php');
 <section>
 <!-- display a table of records -->
 <h2><?php echo $category_name; ?></h2>
+<h1>This is a normal h1</h1>
+
 <table>
 <tr>
 <th>Image</th>
