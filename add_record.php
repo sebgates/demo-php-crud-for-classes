@@ -4,11 +4,12 @@
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+$colour = filter_input(INPUT_POST, 'colour');
 
 // Validate inputs
 if ($category_id == null || $category_id == false ||
-    $name == null || $price == null || $price == false ) {
-    $error = "Invalid product data. Check all fields and try again.";
+    $name == null || $price == null || $price == false || $colour == null) {
+    $error = "Invalid cat data. Check all fields and try again.";
     include('error.php');
     exit();
 } else {
@@ -63,13 +64,14 @@ if ($category_id == null || $category_id == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO records
-                 (categoryID, name, price, image)
+                 (categoryID, name, price, colour, image)
               VALUES
-                 (:category_id, :name, :price, :image)";
+                 (:category_id, :name, :price, :colour, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
+    $statement->bindValue(':colour', $colour);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();
