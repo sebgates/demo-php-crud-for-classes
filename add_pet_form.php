@@ -13,9 +13,9 @@ $statement->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-        <h1>Add Record</h1>
-        <form action="add_record.php" method="post" enctype="multipart/form-data"
-              id="add_record_form">
+        <h1>Add pet</h1>
+        <form action="add_pet.php" method="post" enctype="multipart/form-data"
+              id="add_pet_form">
 
             <label>Category:</label>
             <select name="category_id">
@@ -43,7 +43,7 @@ include('includes/header.php');
             <br>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Add Record">
+            <input type="submit" value="Add pet">
             <br>
         </form>
         <p><a href="index.php">View Homepage</a></p>

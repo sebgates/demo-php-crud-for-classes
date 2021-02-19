@@ -2,15 +2,15 @@
 require_once('database.php');
 
 // Get IDs
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$pet_id = filter_input(INPUT_POST, 'pet_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 
 // Delete the product from the database
-if ($record_id != false && $category_id != false) {
-    $query = "DELETE FROM records
-              WHERE recordID = :record_id";
+if ($pet_id != false && $category_id != false) {
+    $query = "DELETE FROM pets
+              WHERE petID = :pet_id";
     $statement = $db->prepare($query);
-    $statement->bindValue(':record_id', $record_id);
+    $statement->bindValue(':pet_id', $pet_id);
     $statement->execute();
     $statement->closeCursor();
 }
