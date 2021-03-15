@@ -7,4 +7,11 @@
 
 <!-- the body section -->
 <body>
-<header><h1>My PHP CRUD app</h1></header>
+<header><h1>My PHP CRUD app</h1>
+<div class="topnav">
+  <a class="active" href="index.php">Home</a>
+  <a href="add_pet_form.php">Add Pet</a>
+  <a href="category_list.php">Manage Categories</a>
+  <a href="contact.php">Contact</a>
+</div>
+</header>
